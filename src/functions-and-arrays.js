@@ -53,6 +53,9 @@ function sumNumbers(array) {
 }
 
 // Iteration #3.1 Bonus: Sum Numbers
+
+sum()
+
 function sum(array) {
   let contador =0;
   for (let i = 0; i < array.length; i++){
@@ -60,16 +63,28 @@ function sum(array) {
   }
   return contador;
 }
-
+const total = sum(number);
 const number = [6,12,1,18,13,16,2,1,8,10];
-
+const strings = ["oito","doze","quatro","dois","zero"];
+console.log(sum(number));
+console.log(sum(strings));
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
+  if (numbersAvg.length === 0) return null;
+ 
+  if (numbersAvg.length === 1) return numbersAvg [0];
+  
+  let numbersAverage = [];
 
+  numbersAverage = sumNumbers(numbersAvg) / numbersAvg.length;
+    return numbersAverage;
+}
+averageNumbers(numbersAvg);
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
