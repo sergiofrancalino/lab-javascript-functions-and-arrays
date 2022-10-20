@@ -26,14 +26,16 @@ function findLongestWord(array) {
   let indexWordLongest = 0;
 
   for (let i =0; i < array.length -1; i++) {
-    if (array[indiceWordMayor].length < array[i + 1].length) {
-      indiceWordMayor = i + 1;
+
+    if (array[indexWordLongest].length < array[i + 1].length) {
+      indexWordLongest = i + 1;
     }
     console.log(i, array[i].length, 
-      array[i + 1].length, indiceWordMayor
+      array[i + 1].length, indexWordLongest
     );
   }
-  return array[indiceWordMayor];
+
+  return array[indexWordLongest];
 }
 
 
