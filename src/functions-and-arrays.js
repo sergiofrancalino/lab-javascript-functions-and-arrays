@@ -1,5 +1,17 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2){
+    return num1;
+  }
+  if (num1 < num2){
+    return num2;
+  }
+  if (num1 === num2) {
+    return num1;
+
+    //induce: throw new Error("Unsupported data type sir or ma'am");
+  }
+}
 
 
 
@@ -8,6 +20,20 @@ const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard',
 
 function findLongestWord(array) {
   
+  if (array.length === 0) return null;
+  if (array.length === 1) return array[0];
+  
+  let indexWordLongest = 0;
+
+  for (let i =0; i < array.length -1; i++) {
+    if (array[indiceWordMayor].length < array[i + 1].length) {
+      indiceWordMayor = i + 1;
+    }
+    console.log(i, array[i].length, 
+      array[i + 1].length, indiceWordMayor
+    );
+  }
+  return array[indiceWordMayor];
 }
 
 
@@ -24,9 +50,16 @@ function sumNumbers(array) {
   return sum
 }
 
-// Iteration #3.1 Bonus:
-function sum() {}
+// Iteration #3.1 Bonus: Sum Numbers
+function sum(array) {
+  let contador =0;
+  for (let i = 0; i < array.length; i++){
+    contador += array[i];
+  }
+  return contador;
+}
 
+const number = [6,12,1,18,13,16,2,1,8,10];
 
 
 // Iteration #4: Calculate the average
