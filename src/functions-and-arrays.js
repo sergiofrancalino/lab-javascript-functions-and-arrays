@@ -59,12 +59,25 @@ const number = [6,12,1,18,13,16,2,1,8,10];
 function sum(number) {
  
   let sum = 0;
-  for (let i = 0; i < number.length; i++){
-    sum += number[i];
-  }
-  return sum;
+  let wordsLength = 0;
+  let boolValue = 0;
+  number.forEach(e => {
+    if (typeof(e) === 'object'){
+      throw new Error('Unsupported data type sir or ma\'am');
+    }
+  })
+
+  number.forEach(e => {
+    if (typeof(e) === 'string'){
+      wordsLength+= e.length;
+    } else if (typeof(e) === 'boolean'){
+      boolValue+= +e;
+    } else {
+      sum+= e;
+    }
+  })
+  return sum + wordsLength + boolValue
 }
-const total = sum(number);
 
 
 //sumNumbers(numbers);
@@ -142,8 +155,16 @@ const wordsUnique = [
 ];
 
 
-function uniquifyArray(wordsUnique) {
- 
+function uniquifyArray(array) {
+  
+  if(!array.length) return null
+  let uniqueArray = [];
+  array.forEach(e  => {
+    if(!uniqueArray.includes(e)){
+      uniqueArray.push(e);
+    }
+  })
+  return uniqueArray
   
 }
 
@@ -152,14 +173,14 @@ function uniquifyArray(wordsUnique) {
 
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist(wordsFind) {
+function doesWordExist(wordsFind, palavra) {
+  if(!wordsFind.length) return null
+  return wordsFind.includes(palavra)
+} 
+
+
+
   
- 
-}
-
-
-
-
 // Iteration #7: Count repetition
 const wordsCount = [
   'machine',
@@ -175,10 +196,14 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes(wordsCount) {
-  if (wordsCount.length === 0) return null;
-
-  
+function howManyTimes(wordsCount, palavra) {
+  let sum = 0;
+  wordsCount.forEach(e => {
+    if(e === palavra){
+      sum++
+    }
+  })
+  return sum  
 }
 
 
